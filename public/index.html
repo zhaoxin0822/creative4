@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css"/>
+    <title>Vue Todo</title>
+  </head>
+  <body>
+    <div id="app">
+
+      <div class = "header">
+        <h1>The Journal</h1>
+      </div>
+      <div class = "submition">
+        <form v-on:submit.prevent="addItem">
+          <textarea v-model="text" rows = "4" cols = "50"></textarea>
+        	<button type="submit" class = "buttonSub">Add</button>
+        </form>
+      </div>
+
+      <div class = "grid-container">
+
+          <div class = "leftPage" v-if="items.length">
+            <li v-for="item in leftPages">
+              <div>
+                {{item.text}}
+              </div>
+          </div>
+
+          <div class = "rightPage" v-if="items.length">
+            <li v-for="item in rightPages">
+              <div>
+                {{item.text}}
+              </div>
+          </div>
+    </div>
+
+      <ul>
+      	<li v-for="item in items">
+      	<div class = "pastJournal">{{ item.text }} the page number is : {{item.pageNumber}}</div>
+        <button v-on:click="deleteItem(item)" class="delete">X</button>
+      	</li>
+      </ul>
+
+    </div>
+
+
+
+
+
+
+    <div class ="footer">
+      <font color = "white">
+            <a href="https://github.com/zhaoxin0822/CreativeProject"><font color = "lightgray">Github</font></a>
+      </font>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js" integrity="sha256-pU9euBaEcVl8Gtg+FRYCtin2vKLN8sx5/4npZDmY2VA=" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>

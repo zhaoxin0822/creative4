@@ -1,0 +1,133 @@
+body {
+  background-image:   url("https://images.freecreatives.com/wp-content/uploads/2016/02/Old-Paper-Background-For-Free-.jpg");
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
+
+/* List */
+
+ul {
+    list-style: none;
+}
+
+li {
+    background: #fff;
+    width: 500px;
+    min-height: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.delete {
+    display: none;
+    margin-left: auto;
+}
+
+li:hover .delete {
+    display: block;
+}
+
+.leftPage{
+  grid-area: leftpage;
+  text-align: center;
+  padding: 20px 0;
+  width: 400px;
+  height: 800px;
+  background-image: url("leftpage.jpg");
+}
+
+.rightPage{
+  grid-area: rightpage;
+  text-align: center;
+  padding: 20px 0;
+  width: 400px;
+  height: 800px;
+  background-image: url("rightpage.jpg");
+}
+
+.grid-container{
+  display: grid;
+  grid-template-areas:
+  'leftpage leftpage rightpage rightpage'
+  'leftpage leftpage rightpage rightpage'
+  grid-gap: 2px;
+  border-color: rgba(0, 0, 0, 0.01);
+}
+
+.submition {
+  background-color: rgba(0, 0, 100, 0.2);
+  text-align: center;
+  padding: 100px 0;
+  font-size: 20px;
+}
+
+.header{
+    background-color: rgba(0, 50, 0, 0.3);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 20px;
+    color: white;
+}
+
+.footer{
+  background-color: rgba(0, 0, 20, 0.3);
+  text-align: center;
+  padding: 5px 0;
+  font-size: 20px;
+  width: 100%;
+  height: 30px;
+}
+
+textarea{
+  padding: 12px 20px;
+  border: none;
+  font-size:14pt;
+  box-sizing: border-box;
+  background-color: rgba(50, 0, 50, 0.3);
+}
+
+button {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: rgba(100, 0, 100, 0.6);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.buttonSub{
+  border-radius: 50%;
+}
+
+button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    opacity: 1
+}
+
+/* Controls */
+
+.controls {
+    margin-top: 20px;
+}
+
+.selection{
+  width: 100px;
+}
+
+.footer{
+  text-align: left;
+  color: white;
+  background-color: : gray;
+}
