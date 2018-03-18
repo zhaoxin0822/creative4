@@ -28,7 +28,7 @@ app.delete('/api/items/:id', (req, res) => {
     res.status(404).send("Sorry, that item doesn't exist");
     return;
   }
-  items.splice(removeIndex, 1);
+  items[removeIndex].text = '';
   res.sendStatus(200);
 });
 
