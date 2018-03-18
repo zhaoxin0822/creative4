@@ -90,16 +90,15 @@ var app = new Vue({
     addItem: function() {
         axios.post("/api/items", {
   	     text: this.text,
-         pageNumber: this.pageNumber,
+         pageNumber: this.items.length,
         }).then(response => {
           	this.text = "";
+          	this.getItems();
             this.pageNumber = this.items.length + 1;
             this.currentPage = this.items.length;
             this.maxPage = this.items.length;
             console.log("pageNumber is : " + this.pageNumber);
             console.log("length is : " + this.items.length);
-            //console.log(this.items);
-          	this.getItems();
           	return true;
         }).catch(err => {
         });
