@@ -19,11 +19,11 @@
               <textarea v-model="item.text" class="pagetext" rows = "12" cols="36">
               {{item.text}}
               </textarea>
-              <button class="updateButton" v-on:click="updatePage(item)">submmit change</button>
-              <button class="updateButton" v-on:click="deleteItem(item)" class="delete">Delete page</button>
               <textarea class="pagetext" rows = "2" cols="36">
               page {{item.pageNumber}}
               </textarea>
+              <button class="updateButton" v-on:click="updatePage(item)">submmit change</button>
+              <button class="updateButton" v-on:click="deleteItem(item)" class="delete">Delete page</button>
             </div>
         </div>
         <div class="rightPage" v-if="items.length">
@@ -31,11 +31,11 @@
               <textarea v-model="item.text" class="pagetext" rows = "12" cols="36">
                   {{item.text}}
               </textarea>
-              <button class="updateButton" v-on:click="updatePage(item)">submmit change</button>
-              <button class="updateButton" v-on:click="deleteItem(item)" class="delete">Delete page</button>
               <textarea class="pagetext" rows = "2" cols="36">
                 page {{item.pageNumber}}
               </textarea>
+              <button class="updateButton" v-on:click="updatePage(item)">submmit change</button>
+              <button class="updateButton" v-on:click="deleteItem(item)" class="delete">Delete page</button>
             </div>
         </div>
 
