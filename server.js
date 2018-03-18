@@ -32,4 +32,13 @@ app.delete('/api/items/:id', (req, res) => {
   res.sendStatus(200);
 });
 
+app.put('/api/items/:id', (req, res) => {
+  let id = parseInt(req.params.id);
+  let itemsMap = items.map(item => { return item.id; });
+  let index = itemsMap.indexOf(id);
+  let item = items[index];
+  item.text = req.body.text;
+  res.send(item);
+});
+
 app.listen(3002, () => console.log('Server listening on port 3002!'))
