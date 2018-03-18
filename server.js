@@ -7,38 +7,38 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static('public'))
 
-let items = [];
+let pages = [];
 let id = 0;
 
-app.get('/api/items', (req, res) => {
-  res.send(items);
+app.get('/api/pages', (req, res) => {
+  res.send(pages);
 });
 
-app.post('/api/items', (req, res) => {
+app.post('/api/pages', (req, res) => {
   id = id + 1;
-  let item = {id:id, text:req.body.text, pageNumber:req.body.pageNumber};
-  items.push(item);
-  res.send(item);
+  let page = {id:id, text:req.body.text, pageNumber:req.body.pageNumber};
+  pages.push(page);
+  res.send(page);
 });
 
-app.delete('/api/items/:id', (req, res) => {
+app.delete('/api/pages/:id', (req, res) => {
   let id = parseInt(req.params.id);
-  let removeIndex = items.map(item => { return item.id; }).indexOf(id);
+  let removeIndex = pages.map(page => { return page.id; }).indexOf(id);
   if (removeIndex === -1) {
-    res.status(404).send("Sorry, that item doesn't exist");
+    res.status(404).send("Sorry, that page doesn't exist");
     return;
   }
-  items[removeIndex].text = '';
+  pages[removeIndex].text = '';
   res.sendStatus(200);
 });
 
-app.put('/api/items/:id', (req, res) => {
+app.put('/api/pages/:id', (req, res) => {
   let id = parseInt(req.params.id);
-  let itemsMap = items.map(item => { return item.id; });
+  let itemsMap = pages.map(page => { return page.id; });
   let index = itemsMap.indexOf(id);
-  let item = items[index];
-  item.text = req.body.text;
-  res.send(item);
+  let page = pages[index];
+  page.text = req.body.text;
+  res.send(page);
 });
 
 app.listen(3002, () => console.log('Server listening on port 3002!'))
